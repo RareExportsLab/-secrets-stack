@@ -2,7 +2,7 @@
 FROM alpine:3.7
 
 # set vault version
-ENV VAULT_VERSION 0.11.3
+ENV VAULT_VERSION 1.1.3
 
 # create a new directory
 RUN mkdir /vault
@@ -23,7 +23,7 @@ RUN wget --quiet --output-document=/tmp/vault.zip https://releases.hashicorp.com
 ENV PATH="PATH=$PATH:$PWD/vault"
 
 # add the config file
-COPY ./config/vault-config.json /vault/config/vault-config.json
+COPY ./config/vault-config.hcl /vault/config/vault-config.hcl
 
 # expose port 8200
 EXPOSE 8200

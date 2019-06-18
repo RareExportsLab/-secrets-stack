@@ -11,6 +11,6 @@ vault-logs: ## view logs on vault
 vault-ssh: ## SSH access to Vault
 	@docker-compose -p secrets exec vault bash
 vault-init: ##vault operator init to initialize the vault server. Take note of the Unseal Keys and the Initial Root Token. Without these, the vault is lost when sealed/locked
-	@docker-compose -p secret exec vault vault operator init
+	@docker-compose -p secrets exec vault vault operator init
 vault-unseal: #vault operator unseal to unseal/open the vault. Follow the onscreen instructions and use 3 of the five Unseal Keys
-	@docker-compose -p secret exec vault vault operator unseal
+	@docker-compose -p secrets exec vault vault operator unseal
